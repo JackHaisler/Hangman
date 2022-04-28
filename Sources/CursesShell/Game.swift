@@ -7,7 +7,17 @@ class Game {
     init(mainWindow: Window) {
         self.mainWindow = mainWindow
     }
+    func printHangman(){
+        print("________")
+        print("\n)")
+        print("|      |")
+        print("|")
+        print("|")
+        print("|")
+        print("|")
+        print("|")
 
+    }
     func run() throws {
         // Load dictionary
         mainWindow.write("Loading dictionary...")
@@ -30,7 +40,7 @@ class Game {
             mainWindow.getStringFromTextField(at: Point(x: 10, y: 10),
                                               maxCharacters: 1,
                                               fieldColorPair: nil)
-            
+            printHangman()
 
         } while !shouldQuit
     }
