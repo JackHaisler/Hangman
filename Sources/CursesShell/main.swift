@@ -17,5 +17,8 @@ class Handler : CursesHandlerProtocol {
 let screen = Screen.shared
 screen.startUp(handler:Handler())
 
+let game = Game(mainWindow: screen.window)
+try game.run()
+
 // Wait forever, or until the user presses CTRL-C
 screen.wait()

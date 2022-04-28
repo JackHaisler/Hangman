@@ -1,3 +1,4 @@
+import Foundation
 import Curses
 
 class Game {
@@ -7,7 +8,21 @@ class Game {
         self.mainWindow = mainWindow
     }
 
-    func run() {
+    func run() throws {
+        // Load dictionary
+        mainWindow.write("Loading dictionary...")
+        mainWindow.refresh()
+
+        let dictionaryURL = URL.init(fileURLWithPath: "/usr/share/dict/words")
+        let contents = try String(contentsOf: dictionaryURL, encoding: .utf8)
+        let lines = contents.split(separator: "\n")
+        mainWindow.write("loaded \(lines.count) words")
+        mainWindow.refresh()
+
+        // Dictionary is now loaded.  Filter words to include only those suitable.
+        
+        
+        
         var shouldQuit = false
         
         repeat {
@@ -15,7 +30,8 @@ class Game {
             mainWindow.getStringFromTextField(at: Point(x: 10, y: 10),
                                               maxCharacters: 1,
                                               fieldColorPair: nil)
-            if 
+            
+
         } while !shouldQuit
     }
 }
