@@ -15,6 +15,8 @@ class WordDisplay {
     func writeToWindow(window: Window, at point: Point) {
         window.cursor.position = point
 
+        window.write("So far: ")
+
         // Display word, using dashes if letter has not yet been guessed 
         var index = 0
         for letter in word {
@@ -24,8 +26,11 @@ class WordDisplay {
                 window.write(" _ ")
             }
 
+            
             index += 1
+            
         }
+                    window.write("\n")
 
         // Display guessed characters, separated by commas
         window.write(guessedCharacters.map {String($0)}.joined(separator: ","))
