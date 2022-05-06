@@ -7,17 +7,7 @@ class Game {
     init(mainWindow: Window) {
         self.mainWindow = mainWindow
     }
-    func printHangman(){
-        print("________")
-        print("\n)")
-        print("|      |")
-        print("|")
-        print("|")
-        print("|")
-        print("|")
-        print("|")
-
-    }
+    
     func run() throws {
         // Load dictionary
         mainWindow.write("Loading dictionary...")
@@ -52,7 +42,7 @@ class Game {
         
         repeat {
             mainWindow.cursor.position = Point(x: 0, y: 5)
-            mainWindow.write("Welcome to Hangman. Enter your guess:")
+            mainWindow.write("Welcome to Hangman. Enter your guess: \n")
             let guess = mainWindow.getStringFromTextField(at: Point(x: 38, y: 5),
                                                           maxCharacters: 1,
                                                           fieldColorPair: nil)
