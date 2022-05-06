@@ -43,7 +43,7 @@ class Game {
         repeat {
             mainWindow.cursor.position = Point(x: 0, y: 5)
             mainWindow.write("Welcome to Hangman. Enter your guess: \n")
-            let guess = mainWindow.getStringFromTextField(at: Point(x: 38, y: yValue),
+            let guess = mainWindow.getStringFromTextField(at: Point(x: 38, y: 5),
                                                           maxCharacters: 1,
                                                           fieldColorPair: nil)
             wordDisplay.handleGuess(character: Character(guess))
